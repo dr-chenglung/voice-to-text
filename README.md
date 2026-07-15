@@ -15,6 +15,17 @@
 
 > 首次執行時 Windows SmartScreen 可能因執行檔未經數位簽章而跳出警告，點「其他資訊 → 仍要執行」即可。
 
+### 免安裝版（綠色版）
+
+不想安裝、想直接執行的話，可改下載 `VoiceTyping_x.y.z_x64_portable.exe`：
+
+1. 到 [Releases](https://github.com/dr-chenglung/voice-typing/releases/latest) 下載該檔，放到任一資料夾。
+2. 直接雙擊執行即可，程式常駐系統列，不寫入登錄檔、不需安裝。
+3. 首次使用一樣在系統列圖示按右鍵 →「設定 Settings」填入 API key。
+
+> - **需系統已安裝 WebView2 Runtime**（Win10/11 多半已預裝；免安裝版不會自動補裝，缺少時可自行安裝 [Evergreen Runtime](https://developer.microsoft.com/microsoft-edge/webview2/)）。
+> - 想做到「完全可攜」（設定跟著隨身碟走）：在 exe 旁邊放一份 `config.toml`，程式會優先讀取執行檔旁的設定，不必寫到 `%APPDATA%`。
+
 ## 從原始碼建置的環境需求
 
 - Windows 10/11（含 WebView2 Runtime；Win10/11 多數已預裝，沒裝的話安裝程式會自動補裝）

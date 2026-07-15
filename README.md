@@ -3,32 +3,11 @@
 按熱鍵錄音 → Groq Whisper 轉文字 → Groq LLM 輕度校正 → 模擬鍵盤打進當前焦點視窗。
 常駐 Windows 系統列（工作列右下角通知區域）。完整需求見 [`voicetyping-spec.md`](./voicetyping-spec.md)。
 
-## 安裝（一般使用者，推薦）
+## 環境需求
 
-不想自己編譯的話，直接下載安裝包即可：
+> 本專案以**原始碼形式**發布，未提供預建的安裝檔／執行檔，請自行建置（見下方 [建置與執行](#建置與執行)）。
 
-1. 到 [Releases](https://github.com/dr-chenglung/voice-typing/releases/latest) 頁面。
-2. 下載最新版的 `VoiceTyping_x.y.z_x64-setup.exe`（NSIS 安裝程式，`x.y.z` 為版本號）。
-3. 執行安裝程式，一路下一步完成安裝（若系統缺少 WebView2 Runtime，安裝程式會自動下載補裝）。
-4. 從開始選單啟動 **VoiceTyping**，程式會常駐系統列（工作列右下角）。
-5. 首次使用請先在系統列圖示按右鍵 →「設定 Settings」填入 API key，見下方 [設定](#設定)。
-
-> 首次執行時 Windows SmartScreen 可能因執行檔未經數位簽章而跳出警告，點「其他資訊 → 仍要執行」即可。
-
-### 免安裝版（綠色版）
-
-不想安裝、想直接執行的話，可改下載 `VoiceTyping_x.y.z_x64_portable.zip`：
-
-1. 到 [Releases](https://github.com/dr-chenglung/voice-typing/releases/latest) 下載該壓縮檔，解壓到任一資料夾。
-2. 雙擊裡面的 `VoiceTyping.exe` 執行即可，程式常駐系統列，不寫入登錄檔、不需安裝。
-3. 首次使用一樣在系統列圖示按右鍵 →「設定 Settings」填入 API key。
-
-> - **需系統已安裝 WebView2 Runtime**（Win10/11 多半已預裝；免安裝版不會自動補裝，缺少時可自行安裝 [Evergreen Runtime](https://developer.microsoft.com/microsoft-edge/webview2/)）。
-> - **設定檔一律存到 `%APPDATA%\com.clhuang.voicetyping\config.toml`**（與安裝版相同）：設定視窗存檔只會寫到這裡，不會存在 exe 旁。若想讓程式改讀 exe 旁的設定，可手動在 exe 旁放一份 `config.toml`（程式在 `%APPDATA%` 尚無設定時才會讀它）；但設定視窗存檔不會回寫該檔，故此法僅適合「手動維護、不透過設定視窗存檔」的情境。
-
-## 從原始碼建置的環境需求
-
-- Windows 10/11（含 WebView2 Runtime；Win10/11 多數已預裝，沒裝的話安裝程式會自動補裝）
+- Windows 10/11（需 WebView2 Runtime；Win10/11 多數已預裝，缺少時可自行安裝 [Evergreen Runtime](https://developer.microsoft.com/microsoft-edge/webview2/)）
 - Rust（穩定版，MSVC toolchain）
 - Tauri CLI：`cargo install tauri-cli`（一次性安裝；不需要 Node.js／npm）
 - 一支 Groq API key（<https://console.groq.com>）

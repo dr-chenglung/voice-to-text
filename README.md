@@ -17,14 +17,14 @@
 
 ### 免安裝版（綠色版）
 
-不想安裝、想直接執行的話，可改下載 `VoiceTyping_x.y.z_x64_portable.exe`：
+不想安裝、想直接執行的話，可改下載 `VoiceTyping_x.y.z_x64_portable.zip`：
 
-1. 到 [Releases](https://github.com/dr-chenglung/voice-typing/releases/latest) 下載該檔，放到任一資料夾。
-2. 直接雙擊執行即可，程式常駐系統列，不寫入登錄檔、不需安裝。
+1. 到 [Releases](https://github.com/dr-chenglung/voice-typing/releases/latest) 下載該壓縮檔，解壓到任一資料夾。
+2. 雙擊裡面的 `VoiceTyping.exe` 執行即可，程式常駐系統列，不寫入登錄檔、不需安裝。
 3. 首次使用一樣在系統列圖示按右鍵 →「設定 Settings」填入 API key。
 
 > - **需系統已安裝 WebView2 Runtime**（Win10/11 多半已預裝；免安裝版不會自動補裝，缺少時可自行安裝 [Evergreen Runtime](https://developer.microsoft.com/microsoft-edge/webview2/)）。
-> - 想做到「完全可攜」（設定跟著隨身碟走）：在 exe 旁邊放一份 `config.toml`，程式會優先讀取執行檔旁的設定，不必寫到 `%APPDATA%`。
+> - **設定檔一律存到 `%APPDATA%\com.clhuang.voicetyping\config.toml`**（與安裝版相同）：設定視窗存檔只會寫到這裡，不會存在 exe 旁。若想讓程式改讀 exe 旁的設定，可手動在 exe 旁放一份 `config.toml`（程式在 `%APPDATA%` 尚無設定時才會讀它）；但設定視窗存檔不會回寫該檔，故此法僅適合「手動維護、不透過設定視窗存檔」的情境。
 
 ## 從原始碼建置的環境需求
 

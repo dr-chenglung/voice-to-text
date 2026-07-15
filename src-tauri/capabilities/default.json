@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "本程式動態建立的視窗（overlay/settings/history）皆可呼叫後端 command 與收送事件",
+  "windows": ["*"],
+  "permissions": ["core:default"]
+}

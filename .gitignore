@@ -1,0 +1,11 @@
+/target
+/src-tauri/target
+/src-tauri/gen
+
+# 機密與本機設定，請勿提交
+config.toml
+
+# 開發用內部文件，保留本機、不上傳（規格書 voicetyping-spec.md 仍保留於版控）
+CLAUDE.md
+translation-feature-design.md
+/docs/superpowers/

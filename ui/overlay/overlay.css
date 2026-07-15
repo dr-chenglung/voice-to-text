@@ -1,0 +1,46 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+}
+
+#stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 半透明圓形底盤：在任何背景下都讓麥克風有對比、看得見。 */
+#stage::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 78px;
+  height: 78px;
+  margin: -39px 0 0 -39px;
+  border-radius: 50%;
+  background: rgba(18, 20, 28, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* 麥克風本體：基底為亮灰色（在深色底盤上清楚可見）；顏色由 overlay.js 隨音量直接設在 path 上。 */
+#mic {
+  position: relative;
+  z-index: 1;
+  width: 42px;
+  height: 42px;
+}
+
+/* 每個 path 的初始顏色；overlay.js 會隨音量覆寫此 fill。 */
+#mic path {
+  fill: #e9e9ef;
+}

@@ -1,0 +1,100 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
+  background: #1e1f22;
+  color: #e6e6e6;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 16px;
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+
+label.checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid #3f4147;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 0;
+}
+
+legend {
+  font-size: 12px;
+  font-weight: 600;
+  color: #c8cad0;
+  padding: 0 4px;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  background: #2b2d31;
+  border: 1px solid #3f4147;
+  border-radius: 6px;
+  color: #e6e6e6;
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+.hint {
+  margin: 0;
+  font-size: 11px;
+  color: #9a9da3;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+button {
+  background: #4c6ef5;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3b5bdb;
+}
+
+#status {
+  font-size: 12px;
+  color: #9a9da3;
+}

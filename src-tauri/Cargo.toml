@@ -1,0 +1,39 @@
+[package]
+name = "voicetyping"
+version = "0.1.0"
+edition = "2021"
+description = "語音免打字工具：按熱鍵錄音 → Groq Whisper 轉文字 → Groq LLM 校正 → enigo 打字進焦點視窗"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+# 桌面應用框架：系統托盤、視窗管理、IPC（取代 tray-icon + tao + softbuffer 自封裝方案）
+tauri = { version = "2", features = ["tray-icon"] }
+# 系統通知（Windows toast）：背景執行緒失敗時確保使用者看得到，托盤圖示短暫變色容易被忽略
+tauri-plugin-notification = "2"
+# 全域快捷鍵監聽（偵測右 Alt 等）
+rdev = "0.5"
+# 麥克風音訊擷取
+cpal = "0.15"
+# 記憶體內封裝 WAV
+hound = "3.5"
+# HTTP（呼叫 Groq：multipart + json）
+reqwest = { version = "0.12", features = ["multipart", "json"] }
+# 非同步 runtime（背景跑網路請求）
+tokio = { version = "1", features = ["full"] }
+# 模擬鍵盤輸入到焦點視窗（Ctrl+V 貼上）
+enigo = "0.2"
+# 剪貼簿存取（用貼上方式輸出，繞過中文輸入法組字問題）
+arboard = "3"
+# overlay 視窗的 Win32 延伸樣式微調（WS_EX_NOACTIVATE：Tauri 無對等高層 API，需直接呼叫）
+windows-sys = { version = "0.59", features = ["Win32_Foundation", "Win32_UI_WindowsAndMessaging", "Win32_Media_Audio"] }
+# 設定檔
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+serde_json = "1"
+# 錯誤處理輔助
+anyhow = "1"
+
+[profile.release]
+opt-level = 2
